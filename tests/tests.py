@@ -36,6 +36,17 @@ def test_get_first_user_data(base_page, env):
 
 
 @pytest.mark.regression
+def test_get_first_user_id(base_page, env):
+    first_user = f"{base_page.base_url()}/1"
+    request = get(first_user)
+    response = request.json()
+    actual = response["data"]["id"]
+    expected = env.user_list["data"][0]["id"]
+    assert request.status_code == HTTPStatus.OK
+    assert actual == expected, f"First user id is not as expected.\nActual: {actual}\nExpected: {expected}"
+
+
+@pytest.mark.regression
 def test_get_email_of_first_user(base_page, env):
     first_user = f"{base_page.base_url()}/1"
     request = get(first_user)
@@ -77,6 +88,17 @@ def test_get_second_user_data(base_page, env):
     expected = env.user_list["data"][1]
     assert request.status_code == HTTPStatus.OK
     assert actual == expected, f"Second user data is not as expected.\nActual: {actual}\nExpected: {expected}"
+
+
+@pytest.mark.regression
+def test_get_second_user_id(base_page, env):
+    first_user = f"{base_page.base_url()}/2"
+    request = get(first_user)
+    response = request.json()
+    actual = response["data"]["id"]
+    expected = env.user_list["data"][1]["id"]
+    assert request.status_code == HTTPStatus.OK
+    assert actual == expected, f"Second user id is not as expected.\nActual: {actual}\nExpected: {expected}"
 
 
 @pytest.mark.regression
@@ -124,6 +146,17 @@ def test_get_third_user_data(base_page, env):
 
 
 @pytest.mark.regression
+def test_get_third_user_id(base_page, env):
+    first_user = f"{base_page.base_url()}/3"
+    request = get(first_user)
+    response = request.json()
+    actual = response["data"]["id"]
+    expected = env.user_list["data"][2]["id"]
+    assert request.status_code == HTTPStatus.OK
+    assert actual == expected, f"Third user id is not as expected.\nActual: {actual}\nExpected: {expected}"
+
+
+@pytest.mark.regression
 def test_email_of_third_user(base_page, env):
     third_user = f"{base_page.base_url()}/3"
     request = get(third_user)
@@ -165,6 +198,17 @@ def test_get_fourth_user_data(base_page, env):
     expected = env.user_list["data"][3]
     assert request.status_code == HTTPStatus.OK
     assert actual == expected, f"Fourth user data is not as expected.\nActual: {actual}\nExpected: {expected}"
+
+
+@pytest.mark.regression
+def test_get_fourth_user_id(base_page, env):
+    first_user = f"{base_page.base_url()}/4"
+    request = get(first_user)
+    response = request.json()
+    actual = response["data"]["id"]
+    expected = env.user_list["data"][3]["id"]
+    assert request.status_code == HTTPStatus.OK
+    assert actual == expected, f"Fourth user id is not as expected.\nActual: {actual}\nExpected: {expected}"
 
 
 @pytest.mark.regression
@@ -212,6 +256,17 @@ def test_get_fifth_user_data(base_page, env):
 
 
 @pytest.mark.regression
+def test_get_fifth_user_id(base_page, env):
+    first_user = f"{base_page.base_url()}/5"
+    request = get(first_user)
+    response = request.json()
+    actual = response["data"]["id"]
+    expected = env.user_list["data"][4]["id"]
+    assert request.status_code == HTTPStatus.OK
+    assert actual == expected, f"Fifth user id is not as expected.\nActual: {actual}\nExpected: {expected}"
+
+
+@pytest.mark.regression
 def test_get_email_of_fifth_user(base_page, env):
     fifth_user = f"{base_page.base_url()}/5"
     request = get(fifth_user)
@@ -253,6 +308,17 @@ def test_get_sixth_user_data(base_page, env):
     expected = env.user_list["data"][5]
     assert request.status_code == HTTPStatus.OK
     assert actual == expected, f"Sixth user data is not as expected.\nActual: {actual}\nExpected: {expected}"
+
+
+@pytest.mark.regression
+def test_get_sixth_user_id(base_page, env):
+    first_user = f"{base_page.base_url()}/6"
+    request = get(first_user)
+    response = request.json()
+    actual = response["data"]["id"]
+    expected = env.user_list["data"][5]["id"]
+    assert request.status_code == HTTPStatus.OK
+    assert actual == expected, f"Sixth user id is not as expected.\nActual: {actual}\nExpected: {expected}"
 
 
 @pytest.mark.regression

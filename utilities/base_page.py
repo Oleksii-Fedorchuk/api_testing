@@ -4,4 +4,3 @@ class BasePage:
 
     def base_url(self):
         return self._env.base_url
-
